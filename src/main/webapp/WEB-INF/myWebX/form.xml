@@ -42,6 +42,8 @@
 				</fm-validators:string-compare-validator>
 			</field>
 		</group>
-			
+		<!--防止重复提交-->
+		<group name="fileUpload" extends="csrfCheck">
+		</group>
 	</services:form>
 </beans:beans>
