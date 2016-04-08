@@ -21,6 +21,24 @@
 				</fm-validators:csrf-validator>
 			</field>
 		</group>
+		<!-- eventHome 表单中组的名字   -->
+		<group name="eventBaseInfoDO" extends="csrfCheck">
+			<field name="title" displayName="活动名称">
+				<fm-validators:required-validator>
+					<message>必须填写${displayName}</message>
+				</fm-validators:required-validator>
+			</field>
+			<field name="eventType" displayName="活动类型">
+				<fm-validators:required-validator>
+					<message>必须填写${displayName}</message>
+				</fm-validators:required-validator>
+			</field>
+			<field name="brandId" displayName="活动品牌">
+				<fm-validators:required-validator>
+					<message>必须填写${displayName}</message>
+				</fm-validators:required-validator>
+			</field>
+		</group>
 		<!-- testRegister 表单中组的名字   -->
 		<group name="testRegister" extends="csrfCheck">
 			<field name="userName" displayName="你的姓名">

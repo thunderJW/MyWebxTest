@@ -18,8 +18,15 @@
         <jetty-version>8.1.13.v20130916</jetty-version>
         <project.build.sourceEncoding>${java.encoding}</project.build.sourceEncoding>
         <productionMode>false</productionMode>
+        <lombok-version>1.14.8</lombok-version>
     </properties>
     <dependencies>
+     <!-- @Getter @Setter 注解依赖 -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>${lombok-version}</version>
+		</dependency>
         <dependency>
             <groupId>com.alibaba.citrus</groupId>
             <artifactId>citrus-webx-all</artifactId>

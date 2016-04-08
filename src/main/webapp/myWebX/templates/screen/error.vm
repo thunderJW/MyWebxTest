@@ -1,0 +1,5 @@
+$page.setTitle("统一错误页面")
+<h2>error</h2>
+<h4 >
+	error message : $erroMsg
+</h4>

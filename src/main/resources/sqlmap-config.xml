@@ -4,9 +4,11 @@
 	<!-- 配置实体类 -->
 	<typeAliases>
 		<typeAlias alias="userdo" type="com.alibaba.webx.MyWebxTest.myWebX.module.dao.object.UserDO"/>
+		<typeAlias alias="eventBaseInfoDo" type="com.alibaba.webx.MyWebxTest.myWebX.module.domain.EventBaseInfoDO"/>
 	</typeAliases>
 	<!-- 配置MyBatis 文件 -->
     <mappers>  
     	<mapper resource="com/alibaba/webx/MyWebxTest/myWebX/module/dao/user.xml"/>
+    	<mapper resource="com/alibaba/webx/MyWebxTest/myWebX/module/presistent/EventBaseInfoDOMapper.xml" />
     </mappers>  
 </configuration>  
