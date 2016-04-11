@@ -1,0 +1,117 @@
+/*comment*/
+.ml_5{
+	margin-left:5%
+}
+.line-division{
+	text-align: center;
+	margin-top:5px
+}
+.signGroup{
+	background:#f3f3f3;
+	padding:20px
+}
+.table1{
+	    margin: 0 auto;
+    border: 1px solid #CCCCCC;
+    margin-bottom: 5%;
+}
+
+.table1 .noLine {
+    border-right: none;
+}
+.table1 th {
+    height: 24px;
+    background-color: #E8E8E8;
+    border-right: 1px solid #ccc;
+    text-align: center;
+    font-weight: normal;
+}
+.table1 td {
+    word-wrap: break-word;
+    text-align: center;
+}
+.none{
+	width:0;
+	height:0;
+	display: none;
+}
+.write-input{
+	margin-top:25px!important
+}
+.tab-active{
+	background:#CCCCCC
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12{
+	padding-right:0;
+	padding-left:0
+}
+
+/*我的活动*/
+.myActive .form-title .control-label{
+	margin-top:5px
+}
+.myActive .form-title .search-btn{
+	margin-left:10px
+}
+.myActive .creatActive-btn{
+	background:#C0C0C0;
+	color:#fff;
+	padding:10px 20px
+}
+.myActive .form-title a{
+	text-underline: none;
+	color:#000
+}
+.pagination-goto {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    zoom: 1;
+    padding: 0px 15px;
+}
+.pagination-goto input.ipt {
+    width: 40px;
+    display: inline-block;
+    margin-right: 6px;
+}
+.pagination-goto .btn {
+    padding: 8px;
+}
+.pagination-info {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    zoom: 1;
+    padding: 0px 16px;
+    color: #888;
+}
+.pagination {
+    margin: 0px;
+    vertical-align: middle;
+    border-radius: 0px;
+}
+.myActive-show{
+	padding:5% 10%
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

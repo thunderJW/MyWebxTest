@@ -1,112 +1,191 @@
 $page.setTitle("我的活动页面")
-<style type="text/css">
-	input#inText{width: 150pt;}
-	select#selectPointOfInterest
-	{
-	width                    : 150pt;
-	height                   : 20pt;
-	line-height              : 1.5;
-	padding-right            : 20pt;
-	text-indent              : 4pt;
-	text-align               : left;
-	vertical-align           : middle;
-	box-shadow               : inset 0 0 3px #606060;
-	border                   : 1px solid #acacac;
-	-moz-border-radius       : 6px;
-	-webkit-border-radius    : 6px;
-	border-radius            : 6px;
-	-webkit-appearance       : none;
-	-moz-appearance          : none;
-	appearance               : none;
-	font-family              : Arial,  Calibri, Tahoma, Verdana;
-	font-size                : 9pt;
-	font-weight              : 50;
-	color                    : #000099;
-	cursor                   : pointer;
-	outline                  : none;
-	}
-	select#selectPointOfInterest option
-	{
-	padding             : 4px 10px 4px 10px;
-	font-size           : 11pt;
-	font-weight         : normal;
-	}
-	select#selectPointOfInterest option[selected]{ font-weight:bold}
-	select#selectPointOfInterest option:nth-child(even) { background-color:#f5f5f5; }
-	select#selectPointOfInterest:hover {font-weight: 70;}
-	select#selectPointOfInterest:focus {box-shadow: inset 0 0 5px #000099; font-weight: 60;}
-	/*LABEL FOR SELECT*/
-	label#lblSelect{ position: relative; display: inline-block;}
-	/*DOWNWARD ARROW (25bc)*/
-	label#lblSelect::after
-	{
-	content                 : "\25bc";
-	position                : absolute;
-	top                     : 0;
-	right                   : 0;
-	bottom                  : 0;
-	width                   : 14pt;
-	line-height             : 20pt;
-	vertical-align          : middle;
-	text-align              : center;
-	background              : #000099;
-	color                   : #fefefe;
-	-moz-border-radius       : 0 6px 6px 0;
-	-webkit-border-radius    : 0 6px 6px 0;
-	border-radius           : 0 6px 6px 0;
-	pointer-events          : none;
-	}
-	div#outside{
-	width: 400px;
-	height: 180px;
-	border:solid 1px #CCC
-	}
-</style>
-<h2>我的活动页面</h2>
-<form action="" method="post">
-	$csrfToken.hiddenField
-	#set($group = $form.eventBaseInfoDO.defaultInstance)
-	<input type="hidden" name="action" value="create_eventAction"/>
-	<div id="outside">
-		<h4>创建活动</h4>
-		<table >
-			<tr >
-				<td >
-					*  活动名称：
-					<input id="inText" type="text"  name="$group.title.key" value=""/><br />
-					#if(!$group.title.valid)
-						$!group.title.message
-					#end 
-				</td>
-			</tr>
-			<tr >
-				<td >
-					*  活动类型：
-					<label id="lblSelect">
-						<select name="$group.eventType.key" id="selectPointOfInterest">
-							<option value="0">线下</option>
-							  
-							<option value="1">线上</option>
-						</select>
-					</label>
-				</td>
-			</tr>
-			<tr >
-				<td >
-					*  活动品牌：
-					<label id="lblSelect">
-						<select name="$group.brandId.key" id="selectPointOfInterest">
-							<option value="101">云栖</option>
-							  
-							<option value="102">创客+</option>
-						</select>
-					</label>
-				</td>
-			</tr>
-		</table>
-		<div style="text-align:right;margin-right:20;">
-			<input type="submit" value="确定" name="event_submit_do_create">
-			<input type="button" value="取消" name="">
-        </div>
-	</div>
-</form>
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="renderer" content="webkit">
+		<link rel="stylesheet" href="static/css/bootstrap.css" />
+		<link rel="stylesheet" href="static/css/layer.css" />
+		<link rel="stylesheet" href="static/css/bootstrap-datetimepicker.css" />
+		<link rel="stylesheet" href="static/css/active.css" />
+		<title>Home</title>
+	</head>
+
+	<body>
+		<div class="container myActive">
+			<div class="navbar">
+				<a class="navbar-brand" href="#">
+					我的活动
+				</a>
+				<p class="navbar-text navbar-right"> <a href="#" class="navbar-link creatActive-btn">创建活动</a></p>
+			</div>
+
+			<form id="myActive">
+				<div class="form-title clearfix">
+					<div class="form-group col-sm-2">
+						<label for="" class="control-label col-sm-5">活动名称：</label>
+						<div class="col-sm-6">
+							<input type="text" class="form-control" name="title" />
+						</div>
+					</div>
+					<div class="form-group col-sm-2">
+						<label for="" class="control-label col-sm-5">品牌：</label>
+						<div class="col-sm-6">
+							<select class="form-control" name="brandId">
+		                             	<option value="0" selected="selected">全部</option>
+		                             	                	
+		                        </select>
+
+						</div>
+					</div>
+					<div class="form-group col-sm-2">
+						<label for="" class="control-label col-sm-5">状态：</label>
+						<div class="col-sm-6">
+							<select class="form-control" name="eventStatus">
+		                             	<option value="0" selected="selected">全部</option>
+		                             	                	
+		                        </select>
+
+						</div>
+					</div>
+					<div class="form-group col-sm-2">
+						<label for="" class="control-label col-sm-5">类型：</label>
+						<div class="col-sm-6">
+
+							<select class="form-control" name="eventType">
+		                             	<option value="0" selected="selected">全部</option>
+		                             	                	
+		                        </select>
+						</div>
+					</div>
+					<div class="form-group col-sm-4">
+						<label for="" class="control-label col-sm-3">开始时间：</label>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" name="gmtStart" id="gmtStart" />
+						</div>
+						<div class="col-sm-1 line-division">
+							--
+						</div>
+						<div class="col-sm-2">
+							<input type="text" class="form-control" name="gmtEnd" id="gmtEnd" />
+						</div>
+						<div class="col-sm-2 search-btn">
+							<input type="button" class="form-control" value="搜索" />
+						</div>
+					</div>
+				</div>
+				<fieldset id="">
+					<table class="table table-bordered">
+
+						<thead>
+							<tr>
+								<th>活动名称</th>
+								<th>活动ID</th>
+								<th>状态</th>
+								<th>活动品牌</th>
+								<th>开始时间</th>
+								<th>结束时间</th>
+								<th>类型</th>
+								<th>操作</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Tanmay</td>
+								<td>Bangalore</td>
+								<td>560001</td>
+								<td>Sachin</td>
+								<td>Mumbai</td>
+								<td>400003</td>
+								<td>Sachin</td>
+								<td>
+									<a href="#" class="power-btn">权限</a>|
+									<a href="#" class="downLine-btn">下线</a>|
+									<a href="#" class="admin-btn">管理</a>
+								</td>
+
+							</tr>
+
+						</tbody>
+					</table>
+
+					<div class="pull-right page-box">
+						<div class="pagination-info">共有0条，每页显示：20条</div>
+						<ul class="pagination">
+							<li class="disabled" page-index="1"><a>«</a></li>
+							<li class="disabled" page-index="0"><a>‹</a></li>
+							<li class="active" page-index="1"><a>1</a></li>
+							<li class="disabled" page-index="2"><a>›</a></li>
+							<li class="disabled" page-index="1"><a>»</a></li>
+						</ul>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+		<script type="text/javascript" src="static/js/jquery.js"></script>
+		<script type="text/javascript" src="static/js/bootstrap-datetimepicker.js"></script>
+		<script type="text/javascript" src="static/js/layer.js"></script>
+		<script>
+			$(function() {
+				//权限
+				$(".power-btn").on("click", function() {
+						$(this).remove();
+					})
+					//下线
+				$(".downLine-btn").on("click", function() {
+						$(this).remove();
+					})
+					//管理
+				$(".admin-btn").on("click", function() {
+					$(this).remove();
+				})
+				//时间控件
+				$('#gmtStart').datetimepicker({
+					format: 'yyyy-mm-dd hh:ii'
+				});
+				$('#gmtEnd').datetimepicker({
+					format: 'yyyy-mm-dd hh:ii'
+				});
+				//弹出层
+				var html = '';
+				html += '<form action="" class="myActive-show">'
+				html += '		<div class="form-group col-sm-12">'
+				html += '			<label for="" class="control-label col-sm-4">*活动名称：</label>'
+				html += '			<div class="col-sm-8">'
+				html += '				<input type="text" class="form-control" name="title" />'
+				html += '			</div>'
+				html += '		</div>'
+				html += '		<div class="form-group col-sm-12">'
+				html += '			<label for="" class="control-label col-sm-4">*活动类型：</label>'
+				html += '			<div class="col-sm-8">'
+				html += '				<input type="text" class="form-control" name="eventType" />'
+				html += '			</div>'
+				html += '		</div>'
+				html += '		<div class="form-group col-sm-12">'
+				html += '			<label for="" class="control-label col-sm-4">*活动品牌：</label>'
+				html += '			<div class="col-sm-8">'
+				html += '				<input type="text" class="form-control" name="brandId" />'
+				html += '			</div>'
+				html += '		</div>'
+				html += '		<div class="form-group">'
+				html += '			 <button type="submit" class="btn btn-default pull-right  ml_5">取消</button>'
+				html += '			 <button type="submit" class="btn btn-default pull-right">确定</button>'
+				html += '		</div>'
+				html += '	</form>'
+				$(".creatActive-btn").click(function() {
+					layer.open({
+						type: 1,
+						title: '创建信息',
+						skin: 'layui-layer-rim', //加上边框
+						area: ['400px', '400px'], //宽高
+						content: html
+					});
+				})
+			})
+		</script>
+	</body>
+
+</html>

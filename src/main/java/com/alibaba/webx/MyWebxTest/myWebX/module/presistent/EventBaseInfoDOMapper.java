@@ -1,5 +1,7 @@
 package com.alibaba.webx.MyWebxTest.myWebX.module.presistent;
 
+import java.util.List;
+
 import com.alibaba.webx.MyWebxTest.myWebX.module.domain.EventBaseInfoDO;
 
 public interface EventBaseInfoDOMapper {
@@ -8,5 +10,10 @@ public interface EventBaseInfoDOMapper {
 	 * @return
 	 */
 	public Long createEvent(EventBaseInfoDO eventBaseInfoDO);
+	
+	/**
+	 * 展示所有活动
+	 */
+	public List<EventBaseInfoDO> getAllEvents();
 
 }

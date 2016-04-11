@@ -1,5 +1,7 @@
 package com.alibaba.webx.MyWebxTest.myWebX.module.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +17,11 @@ public class EventServiceImpl implements EventService {
 	@Override
 	public Long createEvent(EventBaseInfoDO eventBaseInfoDO) {
 		return eventBaseInfoDOMapper.createEvent(eventBaseInfoDO);
+	}
+
+	@Override
+	public List<EventBaseInfoDO> getAllEvents() {
+		return eventBaseInfoDOMapper.getAllEvents();
 	}
 
 }
